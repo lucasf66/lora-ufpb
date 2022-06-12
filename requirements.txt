@@ -1,0 +1,5 @@
+mysql.connector
+serial
+datetime
+requests
+flake8
