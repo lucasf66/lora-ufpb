@@ -1,6 +1,6 @@
 # Lora Communication
 
-## Documentação para utilização do script de comuicação entre Lora e Raspberry
+## Documentação para utilização do script de comunicação entre Lora e Raspberry
 
 ### Primeiramente faça o clone do repositório na sua máquina
     * Se não tiver o git instalado , faça a instalação *
