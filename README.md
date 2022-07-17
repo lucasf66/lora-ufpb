@@ -4,6 +4,7 @@
 
 ### Primeiramente faça o clone do repositório na sua máquina
     * Se não tiver o git instalado , faça a instalação *
+        - sudo apt install git -y
     - git clone git@github.com:lucasf66/lora-ufpb.git lora-ufpb
     - cd lora-ufpb
 
