@@ -28,4 +28,31 @@ class Database():
         cursor.execute(sql)
         connection.commit()
         cursor.close()
-
+    @classmethod
+    def view(cls):
+        connection = cls.connect()
+        received = connection.cursor()
+        querry = ("SELECT * FROM data")
+        received.execute(querry)
+        for(temperatura,umidade,co,hora,dia) in received:
+            data = (f"{temperatura},{umidade},{co},{hora},{dia}")
+            print(data)
+        received.close
+    
+    @classmethod
+    def reset(cls):
+        try:
+            connection = cls.connect()
+            received = connection.cursor()
+            querry = ("DELETE FROM data")
+            received.execute(querry)
+            connection.commit() #SEMPRE UTILIZAR COMMIT PRA ATUALIZAR O COMANDO 
+            received.close()
+            print("DATABASE RESETADO")
+        except:
+            print("Ocorreu algum erro")
+    
+    @classmethod
+    def received(cls):
+        connection = Database.connect()
+        return connection

@@ -1,6 +1,10 @@
 import argparse
 import sys
 from services.insert_mysql import insertMysql
+from services.connector import Database
+from services.csv import create_csv
+from services.upload import upload_csv
+
 def check_args():
     if len(sys.argv)<2:
        return True
@@ -23,22 +27,19 @@ def checkArgv(argument):
         return False
     return True
 
-
-
-
 def parse_args():
     parser = argparse.ArgumentParser(description="CLI para utilização do LoRa")
-    parser.add_argument('-e',"--execute",nargs="?",
+    parser.add_argument('-e',"-execute",nargs="?",
                         help="MODO EXECUÇÂO \n Recebe os dados e insere no banco de dados")
-    parser.add_argument('-csv',"--csv",nargs="?",
+    parser.add_argument('-csv',"-csv",nargs="?",
                         help="Faz a conversão para .csv dos dados inseridos no banco")
-    parser.add_argument("-r",'--reset', nargs="?",
+    parser.add_argument("-r",'-reset', nargs="?",
                         help="Reseta o banco apagando todos os dados")
 
-    parser.add_argument("-v",'--view', nargs="?",
+    parser.add_argument("-v",'-view', nargs="?",
                         help="Mostra todos os dados já inseridos")
     
-    parser.add_argument("-up",'--upload', nargs="?",
+    parser.add_argument("-up",'-upload', nargs="?",
                         help="Faz o upload para o Google Drive")
     if check_args():
         print('Error: Insira um argumento válido')
@@ -54,13 +55,10 @@ def main():
         insertMysql()
     elif(checkArgv('-csv')):
         print("CRIANDO CSV")
-        #createCsv(nameCsv)
+        create_csv(nameCsv)
     elif(checkArgv('-reset')):
-        #resetDatabase()
-        print("reset")
+        Database.reset()
     elif(checkArgv('-view')):
-        #seeAlldatas()
-        print("View")
+        Database.view()
     elif(checkArgv('-upload')):
-        #uploadToGoogleDrive(nameCsv)
-        print("Upload")
+        upload_csv(nameCsv)
