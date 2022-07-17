@@ -1,7 +1,7 @@
 #!/bin/bash
 Red='\033[0;31m'
 NC='\033[0m'
-password=1234
+password=1234  #Inserir sua senha aqui
 user='root'
 echo -e "${Red}installing MARIADB${NC}"
 sudo apt install mariadb-server -y
