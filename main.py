@@ -1,13 +1,7 @@
 from services.connector import Database
-import serial
+from services.dados_serial import dados
+#---------RECEBENDO DADOS-------
+data = dados() # a function dados() retorna um dicionario com
+               # Temperatura,umidade,co,hora,dia
 
-#---------CONEXAO BANCO DE DADOS-------
-
-[]
-
-def insertMysql():
-    try:
-        print("Dados recebidos:")
-        print("Umidade , Temperatura , CO , Hora , Dia ")
-    while(True)
-    
+#---------INSERIR NO BANCO-------

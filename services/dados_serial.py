@@ -17,7 +17,7 @@ def dados():
         time=(str(timeAll.hour)+":"+str(timeAll.minute)+":"+str(timeAll.second))
         get_dados=((str(ser.readline())).split("'"))[1].split(",")
         dict_dados['hora'].append(time)
-        dict_dados['dia'].append(datetime.date.today())
+        dict_dados['dia'].append(str(datetime.date.today()))
         dict_dados['temperatura'].append(get_dados[0])
         dict_dados['umidade'].append(get_dados[1])
         dict_dados['co'].append(get_dados[2])
