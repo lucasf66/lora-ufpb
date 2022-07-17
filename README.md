@@ -23,7 +23,7 @@
         SQL_USER = root
         SQL_PASSWORD = pass <Pode ser qualquer pass. Exemplo = 1234>
         SQL_DATABASE = lora
-        DRIVE_TOKEN = Token <Deverá seguir um processo *Opcional>
+        DRIVE_TOKEN = Token <Deverá seguir um processo *Opcionalg>
 
 
 ## Utilização da aplicação
@@ -43,7 +43,7 @@
     Para utilizar bastar executar :
     - python main.py -reset
 
-### Criação
+### Criação do CSV
     - Esse modo faz a criação de um arquivo csv contendo todos os dados obtidos pelos sensores.
     Para utilizar bastar executar :
     - python main.py -csv <nome do arquivo>
