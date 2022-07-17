@@ -1,12 +1,10 @@
 from services.dados_serial import dados
 from services.connector import Database
 def insertMysql():
-    cont = 0
     try:
         print("Dados recebidos:")
         print("Umidade , Temperatura , CO , Hora , Dia ")
-        while (cont<=5):
-            cont+=1
+        while (True):
             data = dados()
             insert_coluna = ""
             insert_dado = ""
