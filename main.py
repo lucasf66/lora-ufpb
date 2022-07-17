@@ -1,4 +1,4 @@
-from cli import main
+from services.cli import main
 
 if __name__ == '__main__':
-    main()
+    main() # CHAMA O COMMAND LINE INTERFACE (CLI)

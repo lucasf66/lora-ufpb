@@ -1,12 +1,13 @@
 from multiprocessing import connection
 from services.connector import Database
 
+#-----------CRIAÇÂO DE ARQUIVO CSV---------
+
 def create_csv(name):
     connection = Database.received()
     received = connection.cursor()
     querry = "SELECT * FROM data"
     received.execute(querry)
-    print(received)
     filename=str(name)+".csv"
     file = open(filename,"a")
     file.write("Umidade,Temperatura,CO,Horario,Dia\n")

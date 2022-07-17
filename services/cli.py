@@ -5,12 +5,14 @@ from services.connector import Database
 from services.csv import create_csv
 from services.upload import upload_csv
 
+#-----------CHECK DE ARGUMENTOS--------
 def check_args():
     if len(sys.argv)<2:
        return True
     else:
         return False 
 
+#-----------SELEÇÂO DOS ARGUMENTOS---------
 def checkArgv(argument):
     if (any(element in argument for element in sys.argv)):
         if((argument=='-csv') or (argument=='-upload')):
@@ -26,6 +28,8 @@ def checkArgv(argument):
     else:
         return False
     return True
+
+#-----------CLI HELP ---------
 
 def parse_args():
     parser = argparse.ArgumentParser(description="CLI para utilização do LoRa")
@@ -48,8 +52,10 @@ def parse_args():
     return parser, parser.parse_args()
 
 
+#-----------CLI---------
+
 def main():
-    parser, args = parse_args()
+    parser, args = parse_args() 
     if(checkArgv('-e')):
         print("EM MODO DE EXECUÇÂO") 
         insertMysql()

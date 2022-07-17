@@ -6,7 +6,7 @@ import mysql.connector
 from dotenv import load_dotenv
 load_dotenv()
 
-
+#-----------CRIA CONEXÃO COM BANCO DE DADOS---------
 class Database():
     
     ## Chama a conexão com o banco
@@ -28,6 +28,8 @@ class Database():
         cursor.execute(sql)
         connection.commit()
         cursor.close()
+    
+    ## Faz a visualização dos dados
     @classmethod
     def view(cls):
         connection = cls.connect()
@@ -38,7 +40,8 @@ class Database():
             data = (f"{temperatura},{umidade},{co},{hora},{dia}")
             print(data)
         received.close
-    
+   
+    ## Faz o reset no banco
     @classmethod
     def reset(cls):
         try:
@@ -51,7 +54,8 @@ class Database():
             print("DATABASE RESETADO")
         except:
             print("Ocorreu algum erro")
-    
+   
+    ## Conexão
     @classmethod
     def received(cls):
         connection = Database.connect()
